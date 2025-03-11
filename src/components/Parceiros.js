@@ -59,51 +59,51 @@ const Logo = styled.img`
   }
 `;
 
-const parceiros = [
-  {
-    name: 'Fender',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Fender_logo.svg'
-  },
-  {
-    name: 'Gibson',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Gibson_logo.svg'
-  },
-  {
-    name: 'Marshall',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Marshall_logo.svg'
-  },
-  {
-    name: 'Roland',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Roland_Corporation_logo.svg'
-  },
-  {
-    name: 'Yamaha',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Yamaha_logo.svg'
-  },
-  {
-    name: 'Shure',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Shure_logo.svg'
-  },
-  {
-    name: 'Pearl',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Pearl_Drums_logo.svg'
-  },
-  {
-    name: 'Zildjian',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Zildjian_Logo.svg'
-  }
-];
-
-const titleVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: { 
-    y: 0, 
-    opacity: 1,
-    transition: { duration: 0.8 }
-  }
-};
-
 function Parceiros() {
+  const parceiros = [
+    {
+      name: 'Fender',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Fender_logo.svg'
+    },
+    {
+      name: 'Gibson',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Gibson_logo.svg'
+    },
+    {
+      name: 'Marshall',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Marshall_logo.svg'
+    },
+    {
+      name: 'Roland',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Roland_Corporation_logo.svg'
+    },
+    {
+      name: 'Yamaha',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Yamaha_logo.svg'
+    },
+    {
+      name: 'Shure',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Shure_logo.svg'
+    },
+    {
+      name: 'Pearl',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Pearl_Drums_logo.svg'
+    },
+    {
+      name: 'Zildjian',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Zildjian_Logo.svg'
+    }
+  ];
+
+  const titleVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.8 }
+    }
+  };
+
   return (
     <ParceirosSection id="parceiros">
       <ParceirosContainer>

@@ -152,41 +152,57 @@ const Dot = styled.div`
   }
 `;
 
-const slides = [
-  {
-    id: 1,
-    title: "Drooms Estúdio de Música",
-    description: "Salas temáticas para ensaios e gravações profissionais",
-    image: "/images/foto_0063.jpg"
-  },
-  {
-    id: 2,
-    title: "Equipamentos de Primeira Linha",
-    description: "Amplificadores, baterias e instrumentos de alta qualidade",
-    image: "/images/foto_0046.jpg"
-  },
-  {
-    id: 3,
-    title: "Ambiente Inspirador",
-    description: "Espaço criado por músicos para músicos",
-    image: "/images/foto_0053.jpg"
-  }
-];
-
-const backgroundVariants = {
-  initial: { scale: 1.2, opacity: 0 },
-  animate: { scale: 1, opacity: 1, transition: { duration: 1 } },
-  exit: { opacity: 0, transition: { duration: 0.5 } }
-};
-
-const contentVariants = {
-  initial: { y: 50, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
-  exit: { y: -50, opacity: 0, transition: { duration: 0.5 } }
-};
-
 function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  
+  const slides = [
+    {
+      id: 1,
+      title: "Drooms Estúdio de Música",
+      description: "Salas temáticas para ensaios e gravações profissionais",
+      image: "/images/foto_0063.jpg"
+    },
+    {
+      id: 2,
+      title: "Equipamentos de Primeira Linha",
+      description: "Amplificadores, baterias e instrumentos de alta qualidade",
+      image: "/images/foto_0046.jpg"
+    },
+    {
+      id: 3,
+      title: "Ambiente Inspirador",
+      description: "Espaço criado por músicos para músicos",
+      image: "/images/foto_0053.jpg"
+    }
+  ];
+  
+  const backgroundVariants = {
+    enter: { scale: 1.2, opacity: 0 },
+    center: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { duration: 1 }
+    },
+    exit: { 
+      scale: 1.1, 
+      opacity: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+  
+  const contentVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.5 }
+    },
+    exit: { 
+      y: -50, 
+      opacity: 0,
+      transition: { duration: 0.3 }
+    }
+  };
   
   useEffect(() => {
     const interval = setInterval(() => {

@@ -279,7 +279,6 @@ const SubmitButton = styled.button`
 `;
 
 function Agenda() {
-  const [currentSalaIndex, setCurrentSalaIndex] = useState(0);
   const [date, setDate] = useState(new Date());
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
   const [formData, setFormData] = useState({
@@ -315,7 +314,37 @@ function Agenda() {
     }
   ]);
   
-  const currentSala = salas[currentSalaIndex];
+  const titleVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.8 }
+    }
+  };
+  
+  const leftVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.2 }
+    }
+  };
+  
+  const rightVariants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.2 }
+    }
+  };
+  
+  const timeSlots = [
+    '09:00', '10:00', '11:00', '12:00', '13:00', 
+    '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'
+  ];
   
   const handleDateChange = (newDate) => {
     setDate(newDate);
@@ -333,7 +362,7 @@ function Agenda() {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Agendamento confirmado!\nSala: ${currentSala.name}\nData: ${date.toLocaleDateString()}\nHorário: ${selectedTimeSlot}\nNome: ${formData.name}`);
+    alert(`Agendamento confirmado!\nSala: ${salas[0].name}\nData: ${date.toLocaleDateString()}\nHorário: ${selectedTimeSlot}\nNome: ${formData.name}`);
     // Aqui você enviaria os dados para o backend
   };
   
@@ -356,10 +385,10 @@ function Agenda() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <SalaImage image={currentSala.image} />
+            <SalaImage image={salas[0].image} />
             <SalaInfo>
-              <SalaName>{currentSala.name}</SalaName>
-              <SalaDescription>{currentSala.description}</SalaDescription>
+              <SalaName>{salas[0].name}</SalaName>
+              <SalaDescription>{salas[0].description}</SalaDescription>
             </SalaInfo>
           </SalaCarousel>
           

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -230,116 +230,100 @@ const SalaButton = styled.a`
   }
 `;
 
-const salas = [
-  {
-    id: 'queen',
-    name: 'Sala Queen',
-    image: '/images/foto_0013.jpg',
-    description: 'Inspirada na lendária banda Queen, esta sala oferece um ambiente sofisticado com equipamentos de alta qualidade para ensaios e gravações.',
-    features: [
-      'Amplificador Marshall JCM800',
-      'Bateria Pearl Reference',
-      'Sistema de PA completo',
-      'Tratamento acústico premium',
-      'Capacidade para 6 músicos'
-    ]
-  },
-  {
-    id: 'led',
-    name: 'Sala Led',
-    image: '/images/foto_0031.jpg',
-    description: 'Em homenagem ao Led Zeppelin, esta sala é ideal para bandas de rock que buscam um som potente e autêntico.',
-    features: [
-      'Amplificadores Marshall e Orange',
-      'Bateria Tama Starclassic',
-      'Microfones Shure SM57 e SM58',
-      'Iluminação temática',
-      'Capacidade para 5 músicos'
-    ]
-  },
-  {
-    id: 'peppers',
-    name: 'Sala Peppers',
-    image: '/images/foto_0046.jpg',
-    description: 'Inspirada no Red Hot Chili Peppers, esta sala é perfeita para bandas de funk rock e alternative. Ambiente colorido e vibrante para estimular a criatividade.',
-    features: [
-      'Amplificador Ampeg SVT para baixo',
-      'Bateria DW Collector\'s Series',
-      'Pedais de efeito variados',
-      'Sistema de gravação básico',
-      'Capacidade para 5 músicos'
-    ]
-  },
-  {
-    id: 'rush',
-    name: 'Sala Rush',
-    image: '/images/foto_0053.jpg',
-    description: 'Dedicada aos amantes do rock progressivo, a Sala Rush oferece espaço amplo e equipamentos de alta precisão para performances técnicas.',
-    features: [
-      'Bateria Tama Starclassic completa',
-      'Amplificador Mesa Boogie Dual Rectifier',
-      'Sistema de monitoramento in-ear',
-      'Teclado Nord Stage 3',
-      'Capacidade para 6 músicos'
-    ]
-  },
-  {
-    id: 'floyd',
-    name: 'Sala Floyd',
-    image: 'https://source.unsplash.com/random/800x600/?psychedelic',
-    description: 'Em homenagem ao Pink Floyd, esta sala é ideal para experimentações sonoras e bandas psicodélicas. Ambiente imersivo com iluminação especial.',
-    features: [
-      'Sistema de som quadrifônico',
-      'Projeções visuais nas paredes',
-      'Sintetizadores e efeitos especiais',
-      'Amplificadores Hiwatt Custom 100',
-      'Capacidade para 7 músicos'
-    ]
-  }
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { 
-    opacity: 1,
-    transition: { duration: 0.5 }
-  },
-  exit: { 
-    opacity: 0,
-    transition: { duration: 0.5 }
-  }
-};
-
-const titleVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: { 
-    y: 0, 
-    opacity: 1,
-    transition: { duration: 0.8 }
-  }
-};
-
-const tabVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: (custom) => ({ 
-    y: 0, 
-    opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.1 }
-  })
-};
-
-const contentVariants = {
-  hidden: { opacity: 0 },
-  visible: { 
-    opacity: 1,
-    transition: { duration: 0.5, delay: 0.3 }
-  }
-};
-
 function Salas() {
-  const [activeSala, setActiveSala] = useState(salas[0].id);
+  const [activeTab, setActiveTab] = useState(0);
   
-  const currentSala = salas.find(sala => sala.id === activeSala);
+  const salas = [
+    {
+      id: 'queen',
+      name: 'Sala Queen',
+      image: '/images/foto_0013.jpg',
+      description: 'Inspirada na lendária banda Queen, esta sala oferece um ambiente sofisticado com equipamentos de alta qualidade para ensaios e gravações.',
+      features: [
+        'Amplificador Marshall JCM800',
+        'Bateria Pearl Reference',
+        'Sistema de PA completo',
+        'Tratamento acústico premium',
+        'Capacidade para 6 músicos'
+      ]
+    },
+    {
+      id: 'led',
+      name: 'Sala Led',
+      image: '/images/foto_0031.jpg',
+      description: 'Em homenagem ao Led Zeppelin, esta sala é ideal para bandas de rock que buscam um som potente e autêntico.',
+      features: [
+        'Amplificadores Marshall e Orange',
+        'Bateria Tama Starclassic',
+        'Microfones Shure SM57 e SM58',
+        'Iluminação temática',
+        'Capacidade para 5 músicos'
+      ]
+    },
+    {
+      id: 'peppers',
+      name: 'Sala Peppers',
+      image: '/images/foto_0046.jpg',
+      description: 'Inspirada no Red Hot Chili Peppers, esta sala é perfeita para bandas de funk rock e alternative. Ambiente colorido e vibrante para estimular a criatividade.',
+      features: [
+        'Amplificador Ampeg SVT para baixo',
+        'Bateria DW Collector\'s Series',
+        'Pedais de efeito variados',
+        'Sistema de gravação básico',
+        'Capacidade para 5 músicos'
+      ]
+    },
+    {
+      id: 'rush',
+      name: 'Sala Rush',
+      image: '/images/foto_0053.jpg',
+      description: 'Dedicada aos amantes do rock progressivo, a Sala Rush oferece espaço amplo e equipamentos de alta precisão para performances técnicas.',
+      features: [
+        'Bateria Tama Starclassic completa',
+        'Amplificador Mesa Boogie Dual Rectifier',
+        'Sistema de monitoramento in-ear',
+        'Teclado Nord Stage 3',
+        'Capacidade para 6 músicos'
+      ]
+    }
+  ];
+  
+  const titleVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.8 }
+    }
+  };
+  
+  const tabVariants = {
+    inactive: { opacity: 0.6, y: 0 },
+    active: { 
+      opacity: 1, 
+      y: -5,
+      transition: { duration: 0.3 }
+    },
+    hover: { 
+      opacity: 0.8,
+      y: -2,
+      transition: { duration: 0.2 }
+    }
+  };
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.5 }
+    },
+    exit: { 
+      opacity: 0,
+      transition: { duration: 0.3 }
+    }
+  };
+  
+  const currentSala = salas[activeTab];
   
   return (
     <SalasSection id="salas">
@@ -361,8 +345,8 @@ function Salas() {
             {salas.map((sala, index) => (
               <SalaTab 
                 key={sala.id}
-                active={activeSala === sala.id}
-                onClick={() => setActiveSala(sala.id)}
+                active={activeTab === index}
+                onClick={() => setActiveTab(index)}
                 variants={tabVariants}
                 custom={index}
               >
@@ -373,7 +357,7 @@ function Salas() {
           
           <AnimatePresence mode="wait">
             <SalaContent
-              key={activeSala}
+              key={currentSala.id}
               variants={containerVariants}
               initial="hidden"
               animate="visible"
