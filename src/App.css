@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  background-color: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 0;
+  letter-spacing: -2px;
+  text-shadow: 3px 3px 0px #ff0066;
+}
+
+.brutal-box {
+  border: 4px solid #ffffff;
+  padding: 20px;
+  margin-top: 40px;
+  transform: rotate(-2deg);
+  background-color: #ff0066;
+  box-shadow: 8px 8px 0px #ffffff;
+}
+
+.brutal-button {
+  background-color: #ffffff;
+  color: #121212;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transform: rotate(2deg);
+  transition: transform 0.2s;
+  font-family: 'Courier New', monospace;
+}
+
+.brutal-button:hover {
+  transform: rotate(0deg) scale(1.05);
+  background-color: #ffff00;
+} 
