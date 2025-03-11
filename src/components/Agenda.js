@@ -278,75 +278,6 @@ const SubmitButton = styled.button`
   }
 `;
 
-const [salas, setSalas] = useState([
-  {
-    id: 'queen',
-    name: 'Sala Queen',
-    image: '/images/foto_0013.jpg',
-    description: 'Inspirada na lendária banda Queen, esta sala oferece um ambiente sofisticado com equipamentos de alta qualidade.'
-  },
-  {
-    id: 'led',
-    name: 'Sala Led',
-    image: '/images/foto_0031.jpg',
-    description: 'Em homenagem ao Led Zeppelin, esta sala é ideal para bandas de rock que buscam um som potente e autêntico.'
-  },
-  {
-    id: 'peppers',
-    name: 'Sala Peppers',
-    image: '/images/foto_0046.jpg',
-    description: 'Inspirada no Red Hot Chili Peppers, esta sala é perfeita para bandas de funk rock e alternative.'
-  },
-  {
-    id: 'rush',
-    name: 'Sala Rush',
-    image: '/images/foto_0053.jpg',
-    description: 'Dedicada aos amantes do rock progressivo, a Sala Rush oferece espaço amplo e equipamentos de alta precisão.'
-  }
-]);
-
-const timeSlots = [
-  { time: '09:00', available: true },
-  { time: '10:00', available: true },
-  { time: '11:00', available: false },
-  { time: '12:00', available: true },
-  { time: '13:00', available: false },
-  { time: '14:00', available: true },
-  { time: '15:00', available: true },
-  { time: '16:00', available: false },
-  { time: '17:00', available: true },
-  { time: '18:00', available: true },
-  { time: '19:00', available: true },
-  { time: '20:00', available: false }
-];
-
-const titleVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: { 
-    y: 0, 
-    opacity: 1,
-    transition: { duration: 0.8 }
-  }
-};
-
-const leftVariants = {
-  hidden: { x: -50, opacity: 0 },
-  visible: { 
-    x: 0, 
-    opacity: 1,
-    transition: { duration: 0.8, delay: 0.2 }
-  }
-};
-
-const rightVariants = {
-  hidden: { x: 50, opacity: 0 },
-  visible: { 
-    x: 0, 
-    opacity: 1,
-    transition: { duration: 0.8, delay: 0.4 }
-  }
-};
-
 function Agenda() {
   const [currentSalaIndex, setCurrentSalaIndex] = useState(0);
   const [date, setDate] = useState(new Date());
@@ -356,6 +287,33 @@ function Agenda() {
     email: '',
     phone: ''
   });
+  
+  const [salas, setSalas] = useState([
+    {
+      id: 'queen',
+      name: 'Sala Queen',
+      image: '/images/foto_0013.jpg',
+      description: 'Inspirada na lendária banda Queen, esta sala oferece um ambiente sofisticado com equipamentos de alta qualidade.'
+    },
+    {
+      id: 'led',
+      name: 'Sala Led',
+      image: '/images/foto_0031.jpg',
+      description: 'Em homenagem ao Led Zeppelin, esta sala é ideal para bandas de rock que buscam um som potente e autêntico.'
+    },
+    {
+      id: 'peppers',
+      name: 'Sala Peppers',
+      image: '/images/foto_0046.jpg',
+      description: 'Inspirada no Red Hot Chili Peppers, esta sala é perfeita para bandas de funk rock e alternative.'
+    },
+    {
+      id: 'rush',
+      name: 'Sala Rush',
+      image: '/images/foto_0053.jpg',
+      description: 'Dedicada aos amantes do rock progressivo, a Sala Rush oferece espaço amplo e equipamentos de alta precisão.'
+    }
+  ]);
   
   const currentSala = salas[currentSalaIndex];
   
