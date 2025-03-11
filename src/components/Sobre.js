@@ -43,14 +43,16 @@ const SobreContent = styled.div`
   }
 `;
 
-const SobreImage = styled.div`
+const SobreImage = styled(motion.div)`
   width: 48%;
-  height: 400px;
-  background-image: url('https://source.unsplash.com/random/800x600/?music,studio,band');
+  height: 500px;
+  background-image: url('/images/foto_0063.jpg');
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
   
   @media screen and (max-width: 768px) {
     width: 100%;

@@ -154,19 +154,22 @@ const Dot = styled.div`
 
 const slides = [
   {
-    image: 'https://source.unsplash.com/random/1600x900/?band',
-    title: 'FAÇA SUA MÚSICA ACONTECER',
-    description: 'Estúdio profissional com 5 salas temáticas para ensaios e gravações'
+    id: 1,
+    title: "Drooms Estúdio de Música",
+    description: "Salas temáticas para ensaios e gravações profissionais",
+    image: "/images/foto_0063.jpg"
   },
   {
-    image: 'https://source.unsplash.com/random/1600x900/?guitar',
-    title: 'EQUIPAMENTOS DE PRIMEIRA',
-    description: 'Amplificadores, instrumentos e equipamentos de alta qualidade'
+    id: 2,
+    title: "Equipamentos de Primeira Linha",
+    description: "Amplificadores, baterias e instrumentos de alta qualidade",
+    image: "/images/foto_0046.jpg"
   },
   {
-    image: 'https://source.unsplash.com/random/1600x900/?studio',
-    title: 'AMBIENTE INSPIRADOR',
-    description: 'Espaço projetado para potencializar sua criatividade musical'
+    id: 3,
+    title: "Ambiente Inspirador",
+    description: "Espaço criado por músicos para músicos",
+    image: "/images/foto_0053.jpg"
   }
 ];
 

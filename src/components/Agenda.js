@@ -278,38 +278,32 @@ const SubmitButton = styled.button`
   }
 `;
 
-const salas = [
+const [salas, setSalas] = useState([
   {
     id: 'queen',
     name: 'Sala Queen',
-    image: 'https://source.unsplash.com/random/800x600/?music,band',
+    image: '/images/foto_0013.jpg',
     description: 'Inspirada na lendária banda Queen, esta sala oferece um ambiente sofisticado com equipamentos de alta qualidade.'
   },
   {
     id: 'led',
     name: 'Sala Led',
-    image: 'https://source.unsplash.com/random/800x600/?guitar,rock',
+    image: '/images/foto_0031.jpg',
     description: 'Em homenagem ao Led Zeppelin, esta sala é ideal para bandas de rock que buscam um som potente e autêntico.'
   },
   {
     id: 'peppers',
     name: 'Sala Peppers',
-    image: 'https://source.unsplash.com/random/800x600/?bass,funk',
+    image: '/images/foto_0046.jpg',
     description: 'Inspirada no Red Hot Chili Peppers, esta sala é perfeita para bandas de funk rock e alternative.'
   },
   {
     id: 'rush',
     name: 'Sala Rush',
-    image: 'https://source.unsplash.com/random/800x600/?drums',
+    image: '/images/foto_0053.jpg',
     description: 'Dedicada aos amantes do rock progressivo, a Sala Rush oferece espaço amplo e equipamentos de alta precisão.'
-  },
-  {
-    id: 'floyd',
-    name: 'Sala Floyd',
-    image: 'https://source.unsplash.com/random/800x600/?psychedelic',
-    description: 'Inspirada no Pink Floyd, esta sala oferece um ambiente imersivo para experiências sonoras únicas.'
   }
-];
+]);
 
 const timeSlots = [
   { time: '09:00', available: true },

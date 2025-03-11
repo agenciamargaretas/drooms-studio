@@ -234,7 +234,7 @@ const salas = [
   {
     id: 'queen',
     name: 'Sala Queen',
-    image: 'https://source.unsplash.com/random/800x600/?music,band',
+    image: '/images/foto_0013.jpg',
     description: 'Inspirada na lendária banda Queen, esta sala oferece um ambiente sofisticado com equipamentos de alta qualidade para ensaios e gravações.',
     features: [
       'Amplificador Marshall JCM800',
@@ -247,7 +247,7 @@ const salas = [
   {
     id: 'led',
     name: 'Sala Led',
-    image: 'https://source.unsplash.com/random/800x600/?guitar,rock',
+    image: '/images/foto_0031.jpg',
     description: 'Em homenagem ao Led Zeppelin, esta sala é ideal para bandas de rock que buscam um som potente e autêntico.',
     features: [
       'Amplificadores Marshall e Orange',
@@ -260,7 +260,7 @@ const salas = [
   {
     id: 'peppers',
     name: 'Sala Peppers',
-    image: 'https://source.unsplash.com/random/800x600/?bass,funk',
+    image: '/images/foto_0046.jpg',
     description: 'Inspirada no Red Hot Chili Peppers, esta sala é perfeita para bandas de funk rock e alternative. Ambiente colorido e vibrante para estimular a criatividade.',
     features: [
       'Amplificador Ampeg SVT para baixo',
@@ -273,13 +273,13 @@ const salas = [
   {
     id: 'rush',
     name: 'Sala Rush',
-    image: 'https://source.unsplash.com/random/800x600/?drums',
+    image: '/images/foto_0053.jpg',
     description: 'Dedicada aos amantes do rock progressivo, a Sala Rush oferece espaço amplo e equipamentos de alta precisão para performances técnicas.',
     features: [
       'Bateria Tama Starclassic completa',
       'Amplificador Mesa Boogie Dual Rectifier',
+      'Sistema de monitoramento in-ear',
       'Teclado Nord Stage 3',
-      'Monitores de palco de alta definição',
       'Capacidade para 6 músicos'
     ]
   },
