@@ -1,24 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import HomePage from './pages/HomePage';
-import RoomsPage from './pages/RoomsPage';
-import BookingPage from './pages/BookingPage';
+import { BrowserRouter as Router } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/salas" element={<RoomsPage />} />
-            <Route path="/agendar" element={<BookingPage />} />
-            <Route path="/agendar/:salaId" element={<BookingPage />} />
-          </Routes>
-        </main>
+        <LandingPage />
       </div>
     </Router>
   );
