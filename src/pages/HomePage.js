@@ -97,7 +97,7 @@ function HomePage() {
         <BrutalBox>
           <h2>FAÇA SUA MÚSICA ACONTECER</h2>
           <p>5 SALAS DE ENSAIO DISPONÍVEIS PARA SUA BANDA</p>
-          <BrutalButton to="/salas">VER SALAS</BrutalButton>
+          <BrutalButton to="/salas">AGENDE AGORA</BrutalButton>
         </BrutalBox>
       </HeroSection>
     </HomeContainer>
